@@ -1,6 +1,8 @@
 const Checkout = () => {
     return (
-        <>Checkout</>
+        <>
+            Checkout
+        </>
     )
 }
 

@@ -1,6 +1,8 @@
 const Recommendation = () => {
     return (
-        <>Recommendation</>
+        <>
+            Recommendation
+        </>
     )
 }
 

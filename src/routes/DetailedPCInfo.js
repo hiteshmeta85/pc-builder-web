@@ -1,6 +1,8 @@
 const DetailedPCInfo = () => {
     return (
-        <>Detailed PC Info</>
+        <>
+            Detailed PC Info
+        </>
     )
 }
 

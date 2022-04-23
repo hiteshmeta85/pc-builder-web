@@ -1,6 +1,8 @@
 const OrderHistory = () => {
     return (
-        <>Order History</>
+        <>
+            Order History
+        </>
     )
 }
 

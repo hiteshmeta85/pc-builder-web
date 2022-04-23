@@ -1,6 +1,8 @@
 const BuildCustomPC = () => {
     return (
-        <>Build Custom PC</>
+        <>
+            Build Custom PC
+        </>
     )
 }
 
