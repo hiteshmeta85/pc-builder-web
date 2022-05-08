@@ -1,5 +1,4 @@
 import {Box, Button, Divider, Img, Table, TableContainer, Tbody, Td, Text, Th, Thead, Tr} from "@chakra-ui/react";
-import StarterPC from "../assets/prebuilds/starter-pc.jpg";
 import prebuilds from "../JSON/prebuilds";
 
 const Prebuild = () => {
