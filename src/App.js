@@ -8,12 +8,13 @@ import BuildCustomPC from "./routes/BuildCustomPC";
 import OrderHistory from "./routes/OrderHistory";
 import Cart from "./routes/Cart";
 import Checkout from "./routes/Checkout";
-import Recommendation from "./routes/Recommendation";
-import {ChakraProvider, theme} from "@chakra-ui/react";
+import Prebuild from "./routes/Prebuild";
+import {ChakraProvider, Divider, theme} from "@chakra-ui/react";
 import httpClient from "./utilities/httpClient";
 import {useState} from "react";
 import Header from "./components/Header";
 import PreviousQueries from "./routes/PreviousQueries";
+import Footer from "./components/Footer";
 
 
 const checkSession = async setIsLoggedIn => {
@@ -54,8 +55,8 @@ const App = () => {
                 <Route exact path='/previous-queries'>
                     <PreviousQueries isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}/>
                 </Route>
-                <Route exact path='/recommendation'>
-                    <Recommendation isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}/>
+                <Route exact path='/prebuild'>
+                    <Prebuild isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}/>
                 </Route>
                 <Route exact path='/detailed-pc-info/:id'>
                     <DetailedPCInfo isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}/>
@@ -72,6 +73,8 @@ const App = () => {
                 <Route exact path='/checkout'>
                     <Checkout isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}/>
                 </Route>
+                {/*<Divider/>*/}
+                {/*<Footer/>*/}
             </BrowserRouter>
         </ChakraProvider>
     );

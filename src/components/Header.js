@@ -10,13 +10,13 @@ import {
     Text,
     useMediaQuery,
 } from '@chakra-ui/react';
-import {Link} from 'react-router-dom';
+import {Link, Redirect} from 'react-router-dom';
 import {HamburgerIcon} from '@chakra-ui/icons';
 import httpClient from "../utilities/httpClient";
+import Logo from "./Logo";
 
 const Header = ({isLoggedIn, setIsLoggedIn}) => {
     const [isLargerThan992] = useMediaQuery('(min-width: 992px)');
-    console.log(isLoggedIn)
 
     const logout = async () => {
         try {
@@ -35,13 +35,14 @@ const Header = ({isLoggedIn, setIsLoggedIn}) => {
 
     return (
         <Box boxShadow='0px 6px 4px -7px rgba(0,0,0,.5)' zIndex='1' position='sticky' top='0'>
+            {/*{isLoggedIn? true: <Redirect to='/'/>}*/}
             <Flex fontFamily='Avenir Next' fontWeight='500' bgColor='white'
                   justifyContent='space-between'
                   py='1rem' px={{base: '1rem', md: '2rem'}}
                   alignItems='center' maxW='1360px' mx='auto'>
                 <Link to='/'>
                     <Center>
-                        <Text fontWeight='bold' fontSize='1.25rem' pos='relative' top='4px'>NZXT</Text>
+                        <Logo/>
                     </Center>
                 </Link>
                 {isLargerThan992 ?
@@ -50,7 +51,7 @@ const Header = ({isLoggedIn, setIsLoggedIn}) => {
                         <Text mr='1.5rem'><Link to='/contact-us'>Contact Us</Link></Text>
                         {isLoggedIn && <Text mr='1.5rem'><Link to='/previous-queries'>Previous Queries</Link></Text>}
                         <Text mr='1.5rem'><Link to='/build-custom-pc'>Custom PC</Link></Text>
-                        <Text mr='1.5rem'><Link to='/recommendation'>Recommended Builds</Link></Text>
+                        <Text mr='1.5rem'><Link to='/prebuild'>Prebuild PCs</Link></Text>
                         {!isLoggedIn && <>
                             <Text mr='1.5rem'><Link to='/login'>Login</Link></Text>
                             <Text mr='1.5rem'><Link to='/registration'>Registration</Link></Text>
@@ -76,9 +77,10 @@ const Header = ({isLoggedIn, setIsLoggedIn}) => {
                             <MenuGroup>
                                 <Link to='/'><MenuItem>Home</MenuItem></Link>
                                 <Link to='/contact-us'><MenuItem>Contact Us</MenuItem></Link>
-                                {isLoggedIn && <Link to='/previous-queries'><MenuItem>Previous Queries</MenuItem></Link> }
+                                {isLoggedIn &&
+                                    <Link to='/previous-queries'><MenuItem>Previous Queries</MenuItem></Link>}
                                 <Link to='/build-custom-pc'><MenuItem>Custom PC</MenuItem></Link>
-                                <Link to='/recommendation'><MenuItem>Recommended Builds</MenuItem></Link>
+                                <Link to='/prebuild'><MenuItem>Prebuild PCs</MenuItem></Link>
                                 <Link to='/order-history'><MenuItem>Order History</MenuItem></Link>
                                 <Link to='/cart'><MenuItem>Cart</MenuItem></Link>
                                 {!isLoggedIn &&
