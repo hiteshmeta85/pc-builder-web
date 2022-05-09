@@ -36,7 +36,6 @@ const Cart = () => {
                     method: 'GET', url: `${process.env.REACT_APP_API_HOST}/user/order/cart-items`,
                 })
                 if (res.data.data.length !== 0) {
-                    console.log(res.data)
                     setOrdersInfo(res.data.data)
                     setDidWeGetTheInfo('true')
                 } else {
@@ -70,7 +69,7 @@ const Cart = () => {
                         <Text color={'gray.500'} as='u'>
                             <Link to='/build-custom-pc' color='blue.500'>Build your new custom PC now!</Link>
                         </Text>
-                        <Img src={EmptyCart} maxW={"md"} mx='auto' py={6} my={5}/>
+                        <Img src={EmptyCart} maxW={{base: 'xs', md: 'sm'}} mx='auto' py={6} my={5}/>
                     </Box>
                 </Box>
             </>

@@ -14,7 +14,7 @@ import httpClient from "./utilities/httpClient";
 import {useState} from "react";
 import Header from "./components/Header";
 import PreviousQueries from "./routes/PreviousQueries";
-import Footer from "./components/Footer";
+import Profile from "./routes/Profile";
 
 
 const checkSession = async setIsLoggedIn => {
@@ -73,8 +73,9 @@ const App = () => {
                 <Route exact path='/checkout'>
                     <Checkout isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}/>
                 </Route>
-                {/*<Divider/>*/}
-                {/*<Footer/>*/}
+                <Route exact path='/profile'>
+                    <Profile isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}/>
+                </Route>
             </BrowserRouter>
         </ChakraProvider>
     );

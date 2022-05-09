@@ -60,6 +60,7 @@ const Header = ({isLoggedIn, setIsLoggedIn}) => {
                             <>
                                 <Text mr='1.5rem'><Link to='/order-history'>Order History</Link></Text>
                                 <Text mr='1.5rem'><Link to='/cart'>Cart</Link></Text>
+                                <Text mr='1.5rem'><Link to='/profile'>Profile</Link></Text>
                                 <Button onClick={logout} mr={{md: '1rem', lg: '1.5rem'}} bgColor='purple.500'
                                         color='white'
                                         _hover={{bgColor: 'purple.400'}} _focus={{boxShadow: 'none'}}>
@@ -83,6 +84,7 @@ const Header = ({isLoggedIn, setIsLoggedIn}) => {
                                 <Link to='/prebuild'><MenuItem>Prebuild PCs</MenuItem></Link>
                                 <Link to='/order-history'><MenuItem>Order History</MenuItem></Link>
                                 <Link to='/cart'><MenuItem>Cart</MenuItem></Link>
+                                <Link to='/profile'><MenuItem>Profile</MenuItem></Link>
                                 {!isLoggedIn &&
                                     <>
                                         <Link to='/login'><MenuItem>Login</MenuItem></Link>
