@@ -47,7 +47,6 @@ const Landing = () => {
                                         Start Your Build
                                     </Button>
                                 </Link>
-                                <Button rounded={'full'}>How It Works</Button>
                             </Stack>
                         </Stack>
                     </Flex>

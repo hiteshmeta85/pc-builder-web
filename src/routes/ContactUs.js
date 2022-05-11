@@ -57,7 +57,8 @@ const ContactUs = (props) => {
             </Flex>
             <Formik
                 initialValues={{
-                    title: '', description: ''
+                    title: '',
+                    description: ''
                 }}
                 validationSchema={Yup.object({
                     title: Yup.string().required('Title Required.'),

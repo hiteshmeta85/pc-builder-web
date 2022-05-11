@@ -1,12 +1,12 @@
 import {
-    Box, Button, Divider, Flex, Heading, Image, Img, Link, Stack, Text
+    Box, Button, Divider, Flex, Heading, Image, Img, Stack, Text, useToast,
 } from "@chakra-ui/react";
 import {useEffect, useState} from "react";
 import httpClient from "../utilities/httpClient";
 import PC from "../assets/components/Nzxt-H510-Elite-Matte-Black-1.jpeg";
 import Loading from "../components/Loading";
 import EmptyCart from "../assets/empty_cart.svg"
-import {Redirect} from "react-router-dom";
+import {Link, Redirect} from "react-router-dom";
 import Error from "../components/Error";
 import {InfoIcon} from "@chakra-ui/icons";
 
@@ -14,12 +14,12 @@ const Cart = () => {
     const [ordersInfo, setOrdersInfo] = useState([])
     const [didWeGetTheInfo, setDidWeGetTheInfo] = useState('loading')
     const [orderPlaced, setOrderPlaced] = useState(false)
+    const toast = useToast();
 
     const handleClick = async () => {
         try {
             const res = await httpClient({
-                method: 'POST',
-                url: `${process.env.REACT_APP_API_HOST}/user/order/cart-items`,
+                method: 'POST', url: `${process.env.REACT_APP_API_HOST}/user/order/cart-items`,
             })
             if (res) {
                 setOrderPlaced(true)
@@ -29,17 +29,41 @@ const Cart = () => {
         }
     }
 
+    const handleDelete = async (item) => {
+        try {
+            const result = await httpClient({
+                method: 'DELETE', url: `${process.env.REACT_APP_API_HOST}/user/order/${item.id}`, data: item
+            })
+            if (result) {
+                setOrdersInfo(ordersInfo.filter(i => i !== item))
+                toast({
+                    title: 'Successfully Removed to Cart!',
+                    position: 'bottom-right',
+                    status: 'success',
+                    duration: 4000,
+                    isClosable: true,
+                });
+            }
+        } catch (err) {
+            toast({
+                title: 'Something went wrong.',
+                position: 'bottom-right',
+                status: 'error',
+                duration: 4000,
+                isClosable: true,
+            });
+        }
+    }
+
     useEffect(() => {
         const getOrder = async () => {
             try {
                 const res = await httpClient({
                     method: 'GET', url: `${process.env.REACT_APP_API_HOST}/user/order/cart-items`,
                 })
-                if (res.data.data.length !== 0) {
+                if (res) {
                     setOrdersInfo(res.data.data)
                     setDidWeGetTheInfo('true')
-                } else {
-                    setDidWeGetTheInfo('null')
                 }
             } catch (err) {
                 setDidWeGetTheInfo('false')
@@ -77,7 +101,18 @@ const Cart = () => {
         if (didWeGetTheInfo === 'true') {
             return (<>
                 {orderPlaced && <Redirect to='/checkout'/>}
-                <Box maxW='1360px' mx='auto' py='0.5rem' px={{base: '1rem', md: '2rem'}}>
+                {ordersInfo.length === 0 ? <Box maxW='1360px' mx='auto' py='0.5rem' px={{base: '1rem', md: '2rem'}}>
+                    <Box textAlign="center" py={10} px={6}>
+                        <InfoIcon boxSize={'50px'} color={'blue.500'}/>
+                        <Heading as="h2" size="xl" mt={6} mb={2}>
+                            Your Cart is Empty.
+                        </Heading>
+                        <Text color={'gray.500'} as='u'>
+                            <Link to='/build-custom-pc' color='blue.500'>Build your new custom PC now!</Link>
+                        </Text>
+                        <Img src={EmptyCart} maxW={{base: 'xs', md: 'sm'}} mx='auto' py={6} my={5}/>
+                    </Box>
+                </Box> : <Box maxW='1360px' mx='auto' py='0.5rem' px={{base: '1rem', md: '2rem'}}>
                     <Flex justifyContent='space-between' pt={3}>
                         <Text fontSize='2rem' color='gray.500' fontWeight='semibold'>Cart</Text>
                         <Button bg='green.400' color='white'
@@ -165,6 +200,7 @@ const Cart = () => {
                                             bg={'red.400'}
                                             size='sm'
                                             color={'white'}
+                                            onClick={() => handleDelete(item)}
                                             _hover={{
                                                 bg: 'red.500',
                                             }}
@@ -178,7 +214,7 @@ const Cart = () => {
                             </Box>)
                         })}
                     </Flex>
-                </Box>
+                </Box>}
             </>)
         }
         if (didWeGetTheInfo === 'false') {
@@ -187,11 +223,9 @@ const Cart = () => {
     }
 
 
-    return (
-        <>
+    return (<>
             {conditionalRendering()}
-        </>
-    )
+        </>)
 }
 
 export default Cart

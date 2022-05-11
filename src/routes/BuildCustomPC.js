@@ -15,7 +15,6 @@ import {
     Text
 } from "@chakra-ui/react";
 import * as Yup from "yup";
-import axios from "axios";
 import {ErrorMessage, Field, Form, Formik} from "formik";
 import components from "../JSON/components";
 import httpClient from "../utilities/httpClient";
@@ -24,15 +23,6 @@ import {useState} from "react";
 const BuildCustomPC = ({isLoggedIn}) => {
 
     const [msg, setMsg] = useState('')
-
-    /*
-    ProcessorPrice: '',
-    MotherboardPrice: '',
-    RAMPrice: '',
-    StoragePrice: '',
-    CabinetPrice: '',
-    GraphicsPrice: ''
-    */
 
     return (<>
         <Formik
@@ -54,17 +44,15 @@ const BuildCustomPC = ({isLoggedIn}) => {
             })}
             onSubmit={async (values, {setSubmitting, resetForm}) => {
                 setSubmitting(false);
-                console.log(values)
                 try {
                     const response = await httpClient({
                         method: 'POST',
                         url: `${process.env.REACT_APP_API_HOST}/user/order`,
                         data: values
                     })
-                    if (response.status === 200) {
+                    if (response.status === 200) { // 200 is OK
                         setMsg('Successfully added your custom PC to cart.')
                         resetForm()
-                        console.log(response)
                     }
                     if (response.status === 400) {
                         console.log(response)
@@ -75,7 +63,7 @@ const BuildCustomPC = ({isLoggedIn}) => {
             }}
         >{({
                handleSubmit, isSubmitting, handleChange, values
-           }) => (<Box maxW='1360px' mx='auto' py='0.5rem' px={{base: '1rem', md: '2rem'}}>
+           }) => (<Box maxW='1360px' mx='auto' pt='0.5rem' pb='4rem' px={{base: '1rem', md: '2rem'}}>
             <Grid templateColumns='repeat(6, 1fr)' gap={8} py={8}>
                 <GridItem colSpan={{base: 6, lg: 4}}>
                     <Form onSubmit={handleSubmit}>
@@ -187,9 +175,6 @@ const BuildCustomPC = ({isLoggedIn}) => {
                                 <Divider/>
                             </Box>
                         </>
-                        {/*         <Box mt={8}>
-                            <Text>Total: </Text>
-                        </Box>*/}
                     </Box>
                 </GridItem>
             </Grid>
@@ -199,5 +184,3 @@ const BuildCustomPC = ({isLoggedIn}) => {
 }
 
 export default BuildCustomPC
-
-//{parseFloat(values.ProcessorPrice) + parseFloat(values.MotherboardPrice) + parseFloat(values.RAMPrice) + parseFloat(values.StoragePrice) + parseFloat(values.GraphicsPrice) + parseFloat(values.CabinetPrice) + parseFloat('2')}

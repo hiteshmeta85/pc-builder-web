@@ -22,7 +22,7 @@ const Registration = (props) => {
             }}
             validationSchema={Yup.object({
                 name: Yup.string().required('Full Name Required.'),
-                email: Yup.string().email().required('Email Required.'),
+                email: Yup.string().email('Enter a Valid Email').required('Email Required.'),
                 password: Yup.string().required('Password Required.'),
                 passwordConfirmation: Yup.string().required('Password Required.')
                     .oneOf([Yup.ref('password'), null], 'Passwords must match.'),

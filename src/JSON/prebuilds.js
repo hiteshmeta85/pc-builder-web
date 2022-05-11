@@ -16,10 +16,12 @@ const prebuilds = [{
         price: '$2,699.00',
         specs: [{
             id: 1,
-            cpu: 'Intel Core i7-12700K 12-Core 3.60 GHz',
-            gpu: 'GeForce RTX™ 3070 Ti',
-            ram: '3200 MHz 32GB (2X16GB)',
-            storage: 'NVMe M.2 SSD 1 TB',
+            Processor: 'Intel Core i7-12700K 12-Core 3.60 GHz',
+            Graphics: 'GeForce RTX™ 3070 Ti',
+            RAM: '3200 MHz 32GB (2X16GB)',
+            Storage: 'NVMe M.2 SSD 1 TB',
+            Cabinet: 'NZXT H510 ELITE (Matte Black)',
+            Motherboard: 'ASROCK B550 PG VELOCITA ATX'
         }],
         image_url: CreatorPC,
     }, {
@@ -28,10 +30,12 @@ const prebuilds = [{
         price: '$3,499.00',
         specs: [{
             id: 1,
-            cpu: 'Intel Core i9-12900K 16-Core 3.20 GHz',
-            gpu: 'GeForce RTX™ 3080 Ti',
-            ram: '3200 MHz 32GB (2X16GB)',
-            storage: 'NVMe M.2 SSD 1 TB',
+            Processor: 'Intel Core i9-12900K 16-Core 3.20 GHz',
+            Graphics: 'GeForce RTX™ 3080 Ti',
+            RAM: '3200 MHz 32GB (2X16GB)',
+            Storage: 'NVMe M.2 SSD 1 TB',
+            Cabinet: 'NZXT CABINET H210 (Matte Black)',
+            Motherboard: 'ASUS PRIME H670-PLUS'
         }],
         image_url: CreatorPCPlus,
     }, {
@@ -40,10 +44,12 @@ const prebuilds = [{
         price: '$3,999.00',
         specs: [{
             id: 1,
-            cpu: 'Intel Core i9-12900K 16-Core 3.20 GHz',
-            gpu: 'GeForce RTX™ 3090',
-            ram: '3200 MHz 64GB (4X16GB)',
-            storage: 'NVMe M.2 SSD 1 TB',
+            Processor: 'Intel Core i9-12900K 16-Core 3.20 GHz',
+            Graphics: 'GeForce RTX™ 3090',
+            RAM: '3200 MHz 64GB (4X16GB)',
+            Storage: 'NVMe M.2 SSD 1 TB',
+            Cabinet: 'NZXT CABINET H210i (Matte White)',
+            Motherboard: 'Asrock B550 Steel Legend Motherboard'
         }],
         image_url: CreatorPCPro,
     }]
@@ -57,10 +63,12 @@ const prebuilds = [{
             price: '$799.00',
             specs: [{
                 id: 1,
-                cpu: 'AMD Ryzen 5 5600G',
-                gpu: 'NVIDIA GeForce® RTX™ 1050ti',
-                ram: '3000 MHz 16 GB (2 x 8 GB)',
-                storage: 'NVMe M.2 SSD 500 GB',
+                Processor: 'AMD Ryzen 5 5600G',
+                Graphics: 'NVIDIA GeForce® RTX™ 1050ti',
+                RAM: '3000 MHz 16 GB (2 x 8 GB)',
+                Storage: 'NVMe M.2 SSD 500 GB',
+                Cabinet: 'NZXT H510 FLOW COMPACT',
+                Motherboard: 'ASUS ROG STRIX B550-F'
             }],
             image_url: FoundationPC,
         }, {
@@ -69,10 +77,12 @@ const prebuilds = [{
             price: '$1099.00',
             specs: [{
                 id: 1,
-                cpu: 'Intel Core i5-10400F 6-Core 2.9 GHz',
-                gpu: 'NVIDIA GeForce® RTX™ 3050',
-                ram: 'Team Force Vulcan 3200 MHz 16GB (2X8GB)',
-                storage: '500GB SN550 M.2 SSD',
+                Processor: 'Intel Core i5-10400F 6-Core 2.9 GHz',
+                Graphics: 'NVIDIA GeForce® RTX™ 3050',
+                RAM: 'Team Force Vulcan 3200 MHz 16GB (2X8GB)',
+                Storage: '500GB SN550 M.2 SSD',
+                Cabinet: 'NZXT H510 ELITE (Matte Black)',
+                Motherboard: 'Asrock B550 Steel Legend Motherboard'
             }],
             image_url: StarterPC,
         }, {
@@ -81,10 +91,12 @@ const prebuilds = [{
             price: '$1199.00',
             specs: [{
                 id: 1,
-                cpu: 'Intel Core i5-10400F 6-Core 2.9 GHz',
-                gpu: 'NVIDIA GeForce RTX™ 3060',
-                ram: 'Team T-FORCE Vulcan Z 3000 MHz 16GB (2X8GB)',
-                storage: '512GB Intel 660p M.2 SSD',
+                Processor: 'Intel Core i5-10400F 6-Core 2.9 GHz',
+                Graphics: 'NVIDIA GeForce RTX™ 3060',
+                RAM: 'Team T-FORCE Vulcan Z 3000 MHz 16GB (2X8GB)',
+                Storage: '512GB Intel 660p M.2 SSD',
+                Cabinet: 'NZXT CABINET H210i (Matte White)',
+                Motherboard: 'ASROCK B550 PG VELOCITA ATX'
             }],
             image_url: StarterPCPlus,
         }]
@@ -97,10 +109,12 @@ const prebuilds = [{
             price: '$799.00',
             specs: [{
                 id: 1,
-                cpu: 'AMD Ryzen 5 5600G',
-                gpu: 'NVIDIA GeForce® RTX™ 1050ti',
-                ram: '3000 MHz 16 GB (2 x 8 GB)',
-                storage: 'NVMe M.2 SSD 500 GB',
+                Processor: 'AMD Ryzen 5 5600G',
+                Graphics: 'NVIDIA GeForce® RTX™ 1050ti',
+                RAM: '3000 MHz 16 GB (2 x 8 GB)',
+                Storage: 'NVMe M.2 SSD 500 GB',
+                Cabinet: 'NZXT H510 FLOW COMPACT',
+                Motherboard: 'ASROCK B550 PG VELOCITA ATX'
             }],
             image_url: FoundationPC,
         }]
@@ -113,10 +127,12 @@ const prebuilds = [{
             price: '$1099.00',
             specs: [{
                 id: 1,
-                cpu: 'Intel Core i5-10400F 6-Core 2.9 GHz',
-                gpu: 'NVIDIA GeForce® RTX™ 3050',
-                ram: 'Team Force Vulcan 3200 MHz 16GB (2X8GB)',
-                storage: '500GB Western Digital SN550 M.2 SSD',
+                Processor: 'Intel Core i5-10400F 6-Core 2.9 GHz',
+                Graphics: 'NVIDIA GeForce® RTX™ 3050',
+                RAM: 'Team Force Vulcan 3200 MHz 16GB (2X8GB)',
+                Storage: '500GB Western Digital SN550 M.2 SSD',
+                Cabinet: 'NZXT H510 ELITE (Matte Black)',
+                Motherboard: 'Asrock B550 Steel Legend Motherboard'
             }],
             image_url: StarterPC,
         }, {
@@ -125,10 +141,12 @@ const prebuilds = [{
             price: '$1199.00',
             specs: [{
                 id: 1,
-                cpu: 'Intel Core i5-10400F 6-Core 2.9 GHz',
-                gpu: 'NVIDIA GeForce RTX™ 3060',
-                ram: 'Team T-FORCE Vulcan Z 3000 MHz 16GB (2X8GB)',
-                storage: '512GB Intel 660p M.2 SSD',
+                Processor: 'Intel Core i5-10400F 6-Core 2.9 GHz',
+                Graphics: 'NVIDIA GeForce RTX™ 3060',
+                RAM: 'Team T-FORCE Vulcan Z 3000 MHz 16GB (2X8GB)',
+                Storage: '512GB Intel 660p M.2 SSD',
+                Cabinet: 'NZXT CABINET H210i (Matte White)',
+                Motherboard: 'ASROCK B550 PG VELOCITA ATX'
             }],
             image_url: StarterPCPlus,
         }, {
@@ -137,10 +155,12 @@ const prebuilds = [{
             price: '$1299.00',
             specs: [{
                 id: 1,
-                cpu: 'Intel Core i5-10400F 6-Core 2.9 GHz',
-                gpu: 'NVIDIA GeForce RTX™ 3060 Ti',
-                ram: 'Team T-FORCE Vulcan Z 3000 MHz 16GB (2X8GB)',
-                storage: '1TB M.2 SSD'
+                Processor: 'Intel Core i5-10400F 6-Core 2.9 GHz',
+                Graphics: 'NVIDIA GeForce RTX™ 3060 Ti',
+                RAM: 'Team T-FORCE Vulcan Z 3000 MHz 16GB (2X8GB)',
+                Storage: '1TB M.2 SSD',
+                Cabinet: 'NZXT H510 FLOW COMPACT',
+                Motherboard: 'ASUS ROG STRIX B550-F'
             }],
             image_url: StarterPCPro,
         }]

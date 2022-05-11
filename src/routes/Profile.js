@@ -4,14 +4,13 @@ import {Box, Button, Flex, FormLabel, Heading, Text} from '@chakra-ui/react';
 import {useEffect, useState} from "react";
 import Error from "../components/Error";
 import CustomInput from "../components/CustomInput";
-import Header from "../components/Header";
 import Loading from "../components/Loading";
 import httpClient from "../utilities/httpClient";
 
 
-const Profile = ({isLoggedIn, setIsLoggedIn}) => {
+const Profile = () => {
 
-    const [userInfo, setUserInfo] = useState()
+    const [userInfo, setUserInfo] = useState([])
     const [didWeGetInfo, setDidWeGetInfo] = useState('loading')
     const [msg, setMsg] = useState('')
 
