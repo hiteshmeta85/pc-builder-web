@@ -1,7 +1,7 @@
 import {useEffect, useState} from "react";
 import Loading from "../components/Loading";
 import httpClient from "../utilities/httpClient";
-import {Box, Flex, Heading, Table, TableContainer, Tbody, Td, Text, Th, Thead, Tr} from "@chakra-ui/react";
+import {Box, Heading, Table, TableContainer, Tbody, Td, Text, Th, Thead, Tr} from "@chakra-ui/react";
 import Error from "../components/Error";
 
 const PreviousQueries = ({isLoggedIn, setIsLoggedIn}) => {

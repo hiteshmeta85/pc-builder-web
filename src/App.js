@@ -3,13 +3,12 @@ import Landing from "./routes/Landing";
 import Login from "./routes/Login";
 import Registration from "./routes/Registration";
 import ContactUs from "./routes/ContactUs";
-import DetailedPCInfo from "./routes/DetailedPCInfo";
 import BuildCustomPC from "./routes/BuildCustomPC";
 import OrderHistory from "./routes/OrderHistory";
 import Cart from "./routes/Cart";
 import Checkout from "./routes/Checkout";
 import Prebuild from "./routes/Prebuild";
-import {ChakraProvider, Divider, theme} from "@chakra-ui/react";
+import {ChakraProvider, theme} from "@chakra-ui/react";
 import httpClient from "./utilities/httpClient";
 import {useState} from "react";
 import Header from "./components/Header";
@@ -56,9 +55,6 @@ const App = () => {
         </Route>
         <Route exact path='/prebuild'>
           <Prebuild isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}/>
-        </Route>
-        <Route exact path='/detailed-pc-info/:id'>
-          <DetailedPCInfo isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}/>
         </Route>
         <Route exact path='/build-custom-pc'>
           <BuildCustomPC isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}/>

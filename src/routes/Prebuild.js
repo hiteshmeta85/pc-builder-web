@@ -10,8 +10,8 @@ import {
   Text,
   Th,
   Thead,
-  useToast,
-  Tr
+  Tr,
+  useToast
 } from "@chakra-ui/react";
 import prebuilds from "../constants/prebuilds";
 import httpClient from "../utilities/httpClient";

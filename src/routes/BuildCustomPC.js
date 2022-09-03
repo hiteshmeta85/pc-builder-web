@@ -24,7 +24,7 @@ const BuildCustomPC = ({isLoggedIn}) => {
 
   const [msg, setMsg] = useState('')
 
-  return (<>
+  return (
     <Formik
       initialValues={{
         Processor: '',
@@ -171,7 +171,7 @@ const BuildCustomPC = ({isLoggedIn}) => {
       </Grid>
     </Box>)}
     </Formik>
-  </>)
+  )
 }
 
 export default BuildCustomPC
