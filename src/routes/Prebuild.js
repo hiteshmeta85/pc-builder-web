@@ -13,7 +13,7 @@ import {
     useToast,
     Tr
 } from "@chakra-ui/react";
-import prebuilds from "../JSON/prebuilds";
+import prebuilds from "../constants/prebuilds";
 import httpClient from "../utilities/httpClient";
 
 const Prebuild = () => {

@@ -16,7 +16,7 @@ import {
 } from "@chakra-ui/react";
 import * as Yup from "yup";
 import {ErrorMessage, Field, Form, Formik} from "formik";
-import components from "../JSON/components";
+import components from "../constants/components";
 import httpClient from "../utilities/httpClient";
 import {useState} from "react";
 
