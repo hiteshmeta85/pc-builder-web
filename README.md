@@ -14,8 +14,8 @@
 Frontend
 
 1. React
-3. Formik Yup
-4. Axios
+2. Formik Yup
+3. Axios
 
 Backend
 
@@ -24,3 +24,25 @@ Backend
 3. TypeORM
 4. PostgreSQL
 5. Redis
+
+### Sample Images
+
+Landing Page
+
+![](src/assets/sample-images/landing-page.png)
+
+Prebuilt Page
+
+![](src/assets/sample-images/prebuilt-page.png)
+
+Register Page
+
+![](src/assets/sample-images/register-page.png)
+
+Support Page
+
+![](src/assets/sample-images/support-page.png)
+
+Cart Page
+
+![](src/assets/sample-images/cart-page.png)
