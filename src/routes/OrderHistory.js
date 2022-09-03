@@ -1,21 +1,5 @@
 import Error from "../components/Error";
-import {
-    Box,
-    Button,
-    Divider,
-    Flex,
-    Heading, Image,
-    Img,
-    Link,
-    Stack,
-    Table,
-    Tbody,
-    Td,
-    Text,
-    Th,
-    Thead,
-    Tr
-} from '@chakra-ui/react';
+import {Box, Divider, Flex, Heading, Image, Img, Link, SimpleGrid, Stack, Text} from '@chakra-ui/react';
 import {useEffect, useState} from "react";
 import Loading from "../components/Loading";
 import httpClient from "../utilities/httpClient";
@@ -66,7 +50,7 @@ const OrderHistory = () => {
                         <Text fontSize='2rem' color='gray.500' fontWeight='semibold'>Order History</Text>
                     </Flex>
                     <Divider/>
-                    <Flex gap={4} flexWrap='wrap' py={6}>
+                    <SimpleGrid columns={{base: 1, md: 2, lg: 3, xl: 4}} gap={4} flexWrap='wrap' py={6}>
                         {ordersInfo.map((item) => {
                             return (<Box boxShadow={'md'} borderWidth="1px"
                                          borderRadius="lg" key={item.id}>
@@ -83,21 +67,21 @@ const OrderHistory = () => {
                                             maxW='2xs'
                                         />
                                     </Flex>
+                                    <Divider/>
                                     <Stack
                                         flex={1}
                                         flexDirection="column"
                                         justifyContent="start"
                                         alignItems="start"
-                                        p={1}
-                                        pt={2}>
-                                        <Heading fontSize={'2xl'} fontFamily={'body'}>
-                                            Custom PC
-                                        </Heading>
+                                        px={2}
+                                        pt={6}
+                                        pb={3}
+                                    >
                                         <Text
                                             textAlign={'start'}
                                         >
                                             <Text as='span' color='black' fontWeight='600'>Order
-                                                Id:</Text> ##0000{item.id}
+                                                Id:</Text> #0000{item.id}
                                         </Text>
                                         <Box fontWeight={600} color={'gray.500'} fontSize="sm" mb={4}>
                                             <Text
@@ -136,7 +120,7 @@ const OrderHistory = () => {
                                 </Stack>
                             </Box>)
                         })}
-                    </Flex>
+                    </SimpleGrid>
                 </Box>
             </>)
         }
