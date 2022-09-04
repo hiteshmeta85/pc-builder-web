@@ -85,24 +85,26 @@ const ContactUs = (props) => {
         </Box>
       </Box>)}
       </Formik>
-      <Accordion allowMultiple maxW='container.lg' mx='auto' my={2} px={{md: 4}}>
-        <Text fontSize='2rem' fontWeight='semibold' my={2} px={4}>FAQ's</Text>
-        {Faq.map((item) => {
-          return (<AccordionItem key={item.id}>
-            <h2>
-              <AccordionButton _focus={{boxShadow: 'none'}}>
-                <Box flex='1' textAlign='left' fontWeight='semibold' py={2}>
-                  {item.title}
-                </Box>
-                <AccordionIcon/>
-              </AccordionButton>
-            </h2>
-            <AccordionPanel pb={4}>
-              {item.description}
-            </AccordionPanel>
-          </AccordionItem>)
-        })}
-      </Accordion>
+      <Box bg={'purple.400'} pt={[12,20]} pb={[16,24]} rounded={8}>
+        <Accordion allowMultiple maxW='container.lg' mx='auto' my={2} px={{md: 4}}>
+          <Text color={'white'} fontSize='2rem' fontWeight='semibold' my={2}>FAQ's</Text>
+          {Faq.map((item) => {
+            return (<AccordionItem key={item.id} bg={'white'}>
+              <h2>
+                <AccordionButton _focus={{boxShadow: 'none'}}>
+                  <Box flex='1' textAlign='left' fontWeight='semibold' py={2}>
+                    {item.title}
+                  </Box>
+                  <AccordionIcon/>
+                </AccordionButton>
+              </h2>
+              <AccordionPanel pb={4}>
+                {item.description}
+              </AccordionPanel>
+            </AccordionItem>)
+          })}
+        </Accordion>
+      </Box>
     </Box>
     <Footer/>
   </>)
