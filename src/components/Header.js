@@ -50,9 +50,9 @@ const Header = ({isLoggedIn, setIsLoggedIn}) => {
         {isLargerThan992 ?
           <Flex alignItems='center'>
             <Text mr='1.5rem'><Link to='/'>Home</Link></Text>
-            <Text mr='1.5rem'><Link to='/contact-us'>Contact Us</Link></Text>
+            <Text mr='1.5rem'><Link to='/contact-us'>Support</Link></Text>
             {isLoggedIn && <Text mr='1.5rem'><Link to='/previous-queries'>Previous Queries</Link></Text>}
-            <Text mr='1.5rem'><Link to='/build-custom-pc'>Custom PC</Link></Text>
+            <Text mr='1.5rem'><Link to='/build-custom-pc'>Custom</Link></Text>
             <Text mr='1.5rem'><Link to='/prebuild'>Prebuild PCs</Link></Text>
             {!isLoggedIn && <>
               <Text mr='1.5rem'><Link to='/login'>Login</Link></Text>
@@ -75,10 +75,10 @@ const Header = ({isLoggedIn, setIsLoggedIn}) => {
             <MenuList>
               <MenuGroup>
                 <Link to='/'><MenuItem>Home</MenuItem></Link>
-                <Link to='/contact-us'><MenuItem>Contact Us</MenuItem></Link>
+                <Link to='/contact-us'><MenuItem>Support</MenuItem></Link>
                 {isLoggedIn &&
                   <Link to='/previous-queries'><MenuItem>Previous Queries</MenuItem></Link>}
-                <Link to='/build-custom-pc'><MenuItem>Custom PC</MenuItem></Link>
+                <Link to='/build-custom-pc'><MenuItem>Custom</MenuItem></Link>
                 <Link to='/prebuild'><MenuItem>Prebuild PCs</MenuItem></Link>
                 <Link to='/order-history'><MenuItem>Order History</MenuItem></Link>
                 <Link to='/cart'><MenuItem>Cart</MenuItem></Link>
