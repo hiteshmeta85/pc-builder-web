@@ -14,7 +14,6 @@ import {
   Textarea
 } from "@chakra-ui/react";
 import SupportLogo from '../assets/support.svg';
-import * as Yup from "yup";
 import {Form, Formik} from "formik";
 import CustomInput from "../components/CustomInput";
 import {useState} from "react";

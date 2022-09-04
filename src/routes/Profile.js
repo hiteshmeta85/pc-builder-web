@@ -1,5 +1,4 @@
 import {Form, Formik} from 'formik';
-import * as Yup from 'yup';
 import {Box, Button, Flex, FormLabel, Heading, Text} from '@chakra-ui/react';
 import {useEffect, useState} from "react";
 import Error from "../components/Error";
@@ -7,7 +6,6 @@ import CustomInput from "../components/CustomInput";
 import Loading from "../components/Loading";
 import httpClient from "../utilities/httpClient";
 import profileSchema from "../lib/schemas/profileSchema";
-
 
 const Profile = () => {
 

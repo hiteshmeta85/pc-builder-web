@@ -1,5 +1,4 @@
 import {Form, Formik} from "formik";
-import * as Yup from 'yup';
 import {Box, Button, FormLabel, Heading, Link, Text} from "@chakra-ui/react";
 import CustomInput from "../components/CustomInput";
 import {useState} from "react";
