@@ -1,4 +1,4 @@
-export const FAQ_Questions = [{
+export const Faq = [{
   id: 1,
   title: 'What is an Extended Warranty? Who handles my warranty claim?',
   description: 'An extended warranty extends your pre-existing warranty after our manufacturer\'s warranty has expired. After our two-year limited warranty ends, you can still receive in-warranty services and repairs for your PC. This extended warranty is covered by Extend and can add up to 4 years to your PC warranty.'

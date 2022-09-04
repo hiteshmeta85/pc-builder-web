@@ -20,7 +20,7 @@ import CustomInput from "../components/CustomInput";
 import {useState} from "react";
 import httpClient from "../utilities/httpClient";
 import Footer from "../components/Footer";
-import {FAQ_Questions} from "../constants/faq_questions";
+import {Faq} from "../constants/faq";
 
 const ContactUs = (props) => {
 
@@ -89,7 +89,7 @@ const ContactUs = (props) => {
       </Formik>
       <Accordion allowMultiple maxW='container.lg' mx='auto' my={2} px={{md: 4}}>
         <Text fontSize='2rem' fontWeight='semibold' my={2} px={4}>FAQ's</Text>
-        {FAQ_Questions.map((item) => {
+        {Faq.map((item) => {
           return (<AccordionItem key={item.id}>
             <h2>
               <AccordionButton _focus={{boxShadow: 'none'}}>
