@@ -5,6 +5,7 @@ import CustomInput from "../components/CustomInput";
 import {useState} from "react";
 import axios from "axios";
 import {Redirect} from 'react-router-dom';
+import loginSchema from "../lib/schemas/loginSchema";
 
 const Login = (props) => {
 
@@ -16,10 +17,7 @@ const Login = (props) => {
         email: '',
         password: '',
       }}
-      validationSchema={Yup.object({
-        email: Yup.string().email('Enter a valid Email.').required('Email Required.'),
-        password: Yup.string().required('Password Required.'),
-      })}
+      validationSchema={loginSchema}
       onSubmit={async (values, {setSubmitting}) => {
         setSubmitting(false);
         try {

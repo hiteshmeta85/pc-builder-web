@@ -14,11 +14,11 @@ import {
   RadioGroup,
   Text
 } from "@chakra-ui/react";
-import * as Yup from "yup";
 import {ErrorMessage, Field, Form, Formik} from "formik";
 import components from "../constants/components";
 import httpClient from "../utilities/httpClient";
 import {useState} from "react";
+import customPCSchema from "../lib/schemas/customPCSchema";
 
 const BuildCustomPC = ({isLoggedIn}) => {
 
@@ -34,14 +34,7 @@ const BuildCustomPC = ({isLoggedIn}) => {
         Cabinet: '',
         Graphics: '',
       }}
-      validationSchema={Yup.object({
-        Processor: Yup.string().required('Please select a CPU.'),
-        Motherboard: Yup.string().required('Please select a Motherboard.'),
-        RAM: Yup.string().required('Please select RAM.'),
-        Storage: Yup.string().required('Please select a secondary storage.'),
-        Cabinet: Yup.string().required('Please select a Cabinet.'),
-        Graphics: Yup.string().required('Please select a Graphics card.'),
-      })}
+      validationSchema={customPCSchema}
       onSubmit={async (values, {setSubmitting, resetForm}) => {
         setSubmitting(false);
         try {

@@ -21,6 +21,7 @@ import {useState} from "react";
 import httpClient from "../utilities/httpClient";
 import Footer from "../components/Footer";
 import {Faq} from "../constants/faq";
+import contactSchema from "../lib/schemas/contactSchema";
 
 const ContactUs = (props) => {
 
@@ -40,10 +41,7 @@ const ContactUs = (props) => {
           title: '',
           description: ''
         }}
-        validationSchema={Yup.object({
-          title: Yup.string().required('Title Required.'),
-          description: Yup.string().required('Description Required.'),
-        })}
+        validationSchema={contactSchema}
         onSubmit={async (values, {setSubmitting, resetForm}) => {
           setSubmitting(false);
           const payload = {title: values.title, description: values.description}

@@ -6,6 +6,7 @@ import Error from "../components/Error";
 import CustomInput from "../components/CustomInput";
 import Loading from "../components/Loading";
 import httpClient from "../utilities/httpClient";
+import profileSchema from "../lib/schemas/profileSchema";
 
 
 const Profile = () => {
@@ -45,14 +46,7 @@ const Profile = () => {
             pincode: userInfo.pincode,
             phone: userInfo.phone,
           }}
-          validationSchema={Yup.object({
-            name: Yup.string().required('Full Name Required.'),
-            email: Yup.string().email().required('Email Required.'),
-            password: Yup.string().required('Password Required.'),
-            address: Yup.string().required('Address Required.').min('20', 'Too short.'),
-            pincode: Yup.number().required('Pincode Required.').min(100000, 'Not Valid.').max(999999, 'Not Valid.'),
-            phone: Yup.number().required('Phone Number Required.').positive().integer(),
-          })}
+          validationSchema={profileSchema}
           onSubmit={async (values, {setSubmitting}) => {
             setSubmitting(false);
             const payload = {

@@ -5,6 +5,7 @@ import {Box, Button, Flex, FormLabel, Heading, Link, Text} from "@chakra-ui/reac
 import CustomInput from "../components/CustomInput";
 import axios from "axios";
 import {Redirect} from "react-router-dom";
+import registrationSchema from "../lib/schemas/registrationSchema";
 
 const Registration = (props) => {
   const [errors, setErrors] = useState('')
@@ -20,15 +21,7 @@ const Registration = (props) => {
         pincode: '',
         phone: '',
       }}
-      validationSchema={Yup.object({
-        name: Yup.string().required('Full Name Required.'),
-        email: Yup.string().email('Enter a Valid Email').required('Email Required.'),
-        password: Yup.string().required('Password Required.'),
-        passwordConfirmation: Yup.string().required('Password Required.').oneOf([Yup.ref('password'), null], 'Passwords must match.'),
-        address: Yup.string().required('Address Required.').min('20', 'Too short.'),
-        pincode: Yup.number().required('Pincode Required.').min(100000, 'Not Valid.').max(999999, 'Not Valid.'),
-        phone: Yup.number().required('Phone Number Required.').positive().integer('Phone number must be an integer.'),
-      })}
+      validationSchema={registrationSchema}
       onSubmit={async (values, {setSubmitting}) => {
         setSubmitting(false);
         try {
